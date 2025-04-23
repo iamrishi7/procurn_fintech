@@ -78,7 +78,7 @@ const Layout2 = ({ data, isLayout }: ReceiptLayoutProps) => {
             data?.status == "success"
               ? "#00CEC8"
               : data?.status == "pending"
-              ? "orange.500"
+              ? "#fff03d"
               : "red.500"
           }
         ></Box>
@@ -93,7 +93,7 @@ const Layout2 = ({ data, isLayout }: ReceiptLayoutProps) => {
           ) : data?.status == "pending" ? (
             <Icon
               as={TbClockExclamation}
-              color={"orange.500"}
+              color={"#fff03d"}
               fontSize={isLayout ? "32" : "64"}
             />
           ) : data?.status == "failed" ? (
@@ -109,7 +109,7 @@ const Layout2 = ({ data, isLayout }: ReceiptLayoutProps) => {
               data?.status == "success"
                 ? "#80EF80"
                 : data?.status == "pending"
-                ? "orange.500"
+                ? "#fff03d"
                 : data?.status == "failed"
                 ? "red.500"
                 : "gray.700"
@@ -182,7 +182,7 @@ const Layout2 = ({ data, isLayout }: ReceiptLayoutProps) => {
             data?.status == "success"
               ? "#80EF80"
               : data?.status == "pending"
-              ? "orange.500"
+              ? "#fff03d"
               : "red.500"
           }
         ></Box>
