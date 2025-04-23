@@ -87,7 +87,7 @@ const Layout2 = ({ data, isLayout }: ReceiptLayoutProps) => {
           {data?.status == "success" ? (
             <Icon
               as={IoCheckmarkDoneSharp}
-              color={"whatsapp.500"}
+              color={"#80EF80"}
               fontSize={isLayout ? "32" : "64"}
             />
           ) : data?.status == "pending" ? (
@@ -107,7 +107,7 @@ const Layout2 = ({ data, isLayout }: ReceiptLayoutProps) => {
             fontWeight={"semibold"}
             color={
               data?.status == "success"
-                ? "whatsapp.500"
+                ? "#80EF80"
                 : data?.status == "pending"
                 ? "orange.500"
                 : data?.status == "failed"
@@ -180,7 +180,7 @@ const Layout2 = ({ data, isLayout }: ReceiptLayoutProps) => {
           w={"full"}
           bgColor={
             data?.status == "success"
-              ? "whatsapp.500"
+              ? "#80EF80"
               : data?.status == "pending"
               ? "orange.500"
               : "red.500"
