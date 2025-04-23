@@ -67,7 +67,7 @@ const Index: FC<LayoutProps> = ({ children }) => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
       if (!user?.eko_user_code) {
-        setOnboardModal(true);
+        setOnboardModal(false);
       }
     }
     if (ref.current) {
