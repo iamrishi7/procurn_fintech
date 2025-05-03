@@ -663,6 +663,50 @@ const page = () => {
           </HStack>
 
           <HStack w={["full", "sm"]} justifyContent={"space-between"}>
+            <Text>Flipzik Payout Status</Text>
+            <Switch
+              isChecked={
+                data?.find(
+                  (item: any) =>
+                    item?.provider == "flipzik" && item?.name == "payout"
+                )?.status
+              }
+              name="flipzik_payout"
+              onChange={(e) =>
+                handleStatusUpdate(
+                  rawData?.find(
+                    (item: any) =>
+                      item?.provider == "flipzik" && item?.name == "payout"
+                  )?.id,
+                  { active: e.target.checked }
+                )
+              }
+            />
+          </HStack>
+
+          <HStack w={["full", "sm"]} justifyContent={"space-between"}>
+            <Text>Runpaisa Payout Status</Text>
+            <Switch
+              isChecked={
+                data?.find(
+                  (item: any) =>
+                    item?.provider == "runpaisa" && item?.name == "payout"
+                )?.status
+              }
+              name="runpaisa_payout"
+              onChange={(e) =>
+                handleStatusUpdate(
+                  rawData?.find(
+                    (item: any) =>
+                      item?.provider == "runpaisa" && item?.name == "payout"
+                  )?.id,
+                  { active: e.target.checked }
+                )
+              }
+            />
+          </HStack>
+
+          <HStack w={["full", "sm"]} justifyContent={"space-between"}>
             <Text>Waayupay Payout Status</Text>
             <Switch
               isChecked={
