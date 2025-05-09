@@ -186,16 +186,19 @@ const page = () => {
           </Heading>
 
           {
-          // @ts-ignore
-          process.env.DISABLE_USER_CREATION === true ? null : (
-            <Link
-            // href="/admin/dashboard/users/create">
-            href="#">
-              {/* <CustomButton size={"sm"} rounded={"full"} leftIcon={<FaPlus />}>
-                Create New
-              </CustomButton> */}
-            </Link>
-          )}
+            // @ts-ignore
+            process.env.DISABLE_USER_CREATION === true ? null : (
+              <Link href="/admin/dashboard/users/create">
+                <CustomButton
+                  size={"sm"}
+                  rounded={"full"}
+                  leftIcon={<FaPlus />}
+                >
+                  Create New
+                </CustomButton>
+              </Link>
+            )
+          }
         </HStack>
         <Spacer />
         <CustomTabs
@@ -282,7 +285,7 @@ const page = () => {
           justifyContent={["center", "space-between"]}
         >
           <ExportButtons service="users" fileName="Users" />
-          <Pagination pages={pages} onClick={(url:any) => setUrl(url)} />
+          <Pagination pages={pages} onClick={(url: any) => setUrl(url)} />
         </Stack>
         <br />
         <TableContainer maxH={"lg"} overflowY={"scroll"}>
@@ -539,7 +542,7 @@ const page = () => {
           </Table>
         </TableContainer>
         <br />
-        <Pagination pages={pages} onClick={(url:any) => setUrl(url)} />
+        <Pagination pages={pages} onClick={(url: any) => setUrl(url)} />
       </Box>
 
       {/* Add Admin Remarks To User */}
