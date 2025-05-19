@@ -66,7 +66,7 @@ const page = () => {
         provider: string;
         status: boolean;
         service_id: number | string;
-        limit: string | number
+        limit: string | number;
       }[] = [];
       const res = await API.getServices();
       setRawData(res.data);
@@ -77,7 +77,7 @@ const page = () => {
             status: Boolean(item?.active),
             provider: item?.provider,
             service_id: item?.id,
-            limit: item?.limit
+            limit: item?.limit,
           });
         });
       }
@@ -685,6 +685,28 @@ const page = () => {
           </HStack>
 
           <HStack w={["full", "sm"]} justifyContent={"space-between"}>
+            <Text>Aeronpay Payout Status</Text>
+            <Switch
+              isChecked={
+                data?.find(
+                  (item: any) =>
+                    item?.provider == "aeronpay" && item?.name == "payout"
+                )?.status
+              }
+              name="aeronpay_payout"
+              onChange={(e) =>
+                handleStatusUpdate(
+                  rawData?.find(
+                    (item: any) =>
+                      item?.provider == "aeronpay" && item?.name == "payout"
+                  )?.id,
+                  { active: e.target.checked }
+                )
+              }
+            />
+          </HStack>
+
+          <HStack w={["full", "sm"]} justifyContent={"space-between"}>
             <Text>Runpaisa Payout Status</Text>
             <Switch
               isChecked={
@@ -727,7 +749,6 @@ const page = () => {
               }
             />
           </HStack>
-
         </VStack>
       </Box>
 
